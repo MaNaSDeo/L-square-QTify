@@ -1,0 +1,13 @@
+.heroComponent{
+    background-color: var(--css-black);
+    height: 270px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroComponent img{
+    height: 212px;
+    width: 799px;
+}
