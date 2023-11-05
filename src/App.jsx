@@ -1,9 +1,6 @@
-// import Button from '@mui/material/Button';
-// import Box from '@mui/material/Box';
-// import TextField from '@mui/material/TextField';
-// import SearchIcon from '@mui/icons-material/Search';
 import Navbar from './components/Navbar';
 import HeroImage from './components/HeroImage'
+import Card from './components/Card';
 
 function App() {
 
@@ -11,6 +8,7 @@ function App() {
     <>
       <Navbar />
       <HeroImage/>
+      <Card albumImg={"albumImage.jpg"} followers={"100M Follows"} title={"New Bollywood"} />
     </>
   )
 }
