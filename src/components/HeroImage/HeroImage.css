@@ -1,13 +1,17 @@
 .heroComponent{
     background-color: var(--css-black);
-    height: 270px;
     width: 100vw;
+    height: 270px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-.heroComponent img{
-    height: 212px;
-    width: 799px;
+.hero-text{
+    color: var(--css-white);
+    font-family: Poppins;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: 0px;
+    text-align: center;
 }
