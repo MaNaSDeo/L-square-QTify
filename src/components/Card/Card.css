@@ -4,6 +4,7 @@
     width: 159px;
     background-color: var(--css-black); /* Background color of the card */
     overflow: hidden; /* Hide overflowing content within the card */
+    margin: 0px 20px;
 }
   
 .card-main {

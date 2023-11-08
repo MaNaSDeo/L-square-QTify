@@ -11,7 +11,6 @@ function index() {
       <div className='hero-img'>
         <img src="vibrating-headphone 1.png" alt="Hero Headphone Image" height="212px" width="212px" />
       </div>
-
     </div>
   )
 }
