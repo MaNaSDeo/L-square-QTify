@@ -1,6 +1,7 @@
 .section{
     background-color: var(--css-black);
     row-gap: 32px;
+    width: 100%;
 }
 .title{
     font-family: Poppins;
@@ -18,4 +19,18 @@
     row-gap: 40px;
     display: flex;
     flex-wrap: wrap;
+}
+.section-header{
+    display: flex;
+    justify-content: space-between;
+}
+.section-toggle-btn{
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0px;
+    text-align: right;
+    color: var(--css-primary);
+    cursor: pointer;
 }

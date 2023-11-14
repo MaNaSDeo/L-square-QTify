@@ -36,12 +36,12 @@ function App() {
   }, [])
 
   return (
-    <>
+    <div style={{width: "100%"}}>
       <Navbar />
       <HeroImage />
       <Section title={'Top Albums'} playListData={topAlbums}/>
       <Section title={'New Albums'} playListData={newAlbums}/>
-    </>
+    </div>
   )
 }
 

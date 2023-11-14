@@ -1,5 +1,6 @@
 /* CSS for the Card component */
 .card {
+    max-width: 100%;
     height: 232px;
     width: 159px;
     background-color: var(--css-black); /* Background color of the card */

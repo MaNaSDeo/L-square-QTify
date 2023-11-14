@@ -1,22 +1,31 @@
 import './Section.css'
 import Card from '../Card'
+import Carousel from '../Carousel'
+import { useState } from 'react'
 
 function index({title, playListData}) {
+  const [isCollapsed, setIsCollapsed] = useState(false)
   return (
     <div className='section'>
-      <p className="title">{title}</p>
-      <div className='card-container'>
+      <div className="section-header">
+        <p className="title">{title}</p>
+        <p 
+          className='section-toggle-btn'
+          onClick={() => setIsCollapsed(!isCollapsed)}
+          >{isCollapsed? "Show all" : "Collapsed"}</p>
+      </div>
+      {isCollapsed? <div className='card-container'>
         {playListData.map(element => {
-            return(
-                <Card 
-                    key={element.id} 
-                    imgSrc={element.image} 
-                    followers={element.follows} 
-                    title={element.title} 
-                />
-            )
+          return(
+            <Card 
+              key={element.id} 
+              imgSrc={element.image} 
+              followers={element.follows} 
+              title={element.title} 
+            />
+          )
         })}
-      </div>  
+      </div> : <Carousel playListData={playListData} />}  
     </div>
   )
 }
