@@ -14,7 +14,7 @@ function index({playListData}) {
     <div className='carousel-container'>
       <Swiper
         modules={[Navigation]}
-        slidesPerView={6}
+        slidesPerView={'auto'}
         // spaceBetween={'auto'}
         navigation={{ nextEl: ".arrow-left", prevEl: ".arrow-right" }}
       >
@@ -23,7 +23,7 @@ function index({playListData}) {
             <SwiperSlide key={element.id} >
               <Card 
                 imgSrc={element.image} 
-                followers={element.follows} 
+                followers={element.follows? element.follows : element.likes} 
                 title={element.title} 
               />
             </SwiperSlide>
