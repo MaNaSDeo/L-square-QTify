@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import HeroImage from './components/HeroImage';
 import Section from './components/Section';
 import FilteredSection from './components/FilteredSection'
-// import FilteredSection1 from './components/FilteredSection1'
+import AccordionFAQ from './components/AccordionFAQ'
 
 const ENDPOINT = "https://qtify-backend-labs.crio.do/"
 
@@ -77,12 +77,13 @@ function App() {
 
   return (
     <div style={{width: "100%"}}>
+      {/* <h1>Helllo</h1> */}
       <Navbar />
       <HeroImage />
       <Section title={'Top Albums'} playListData={topAlbums}/>
       <Section title={'New Albums'} playListData={newAlbums}/>
       <FilteredSection genres={genres} playListData={filteredPlaylist} currentTabFilter={setTabsFilter}/>
-      {/* <FilteredSection1 genres={genres} /> */}
+      <AccordionFAQ />
     </div>
   )
 }
