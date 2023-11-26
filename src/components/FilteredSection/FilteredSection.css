@@ -24,3 +24,6 @@
 /* .filter-heading-container{
     background-color: var(--css-primary)
 } */
+.filterHeading-list{
+    margin-bottom: 10px;
+}

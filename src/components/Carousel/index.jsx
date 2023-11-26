@@ -9,14 +9,14 @@ import 'swiper/css/navigation';
 import Card from '../Card'
 import './Carousel.css'
 
-function index({playListData}) {
+function index({playListData, navId}) {
+
   return (
     <div className='carousel-container'>
       <Swiper
         modules={[Navigation]}
         slidesPerView={'auto'}
-        // spaceBetween={'auto'}
-        navigation={{ nextEl: ".arrow-left", prevEl: ".arrow-right" }}
+        navigation={{ nextEl: `.arrow-left-${navId}`, prevEl: `.arrow-right-${navId}` }}
       >
         {playListData.map(element => {
           return(
@@ -30,10 +30,10 @@ function index({playListData}) {
           )
         })}
       </Swiper>
-        <div className="arrow-left arrow">
+        <div className={`arrow-left-${navId} arrow-left arrow`}>
           <img src="left-arrow.png" alt="Prev Icon" />
         </div>
-        <div className="arrow-right arrow">
+        <div className={`arrow-right-${navId} arrow-right arrow`}>
           <img src="right-arrow.png" alt="Next Icon" />
         </div>
     </div>

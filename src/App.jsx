@@ -17,20 +17,7 @@ function App() {
   const [songsPlaylist, setSongsPlaylist] = useState([]);
   const [filteredPlaylist, setFilteredPlaylist] = useState([]);
   const [tabsFilter, setTabsFilter] = useState('all');
-  // console.log(filteredPlaylist);
-
-  useEffect(() =>{
-    const filterTryFunction = (tabsFilter) => {
-      console.log(tabsFilter);
-        if(tabsFilter==='all'){
-          setFilteredPlaylist([...topAlbums, ...newAlbums]);
-        }else{
-          const newArray = songsPlaylist.filter(element => element.genre.key===tabsFilter)
-          setFilteredPlaylist(newArray);
-        }
-      }
-      filterTryFunction(tabsFilter);
-  }, [tabsFilter])
+  // console.log(genres);
 
   useEffect(() => {
     const playListData = async() =>{
@@ -58,7 +45,11 @@ function App() {
       //To fetch Genres list.
       try {
         const responseGenre = await axios.get(`${ENDPOINT}genres`)
-        setGenres(responseGenre.data.data);
+        console.log(responseGenre.data.data);
+        setGenres([{
+          'key': 'all',
+          'label': 'All'
+      }, ...responseGenre.data.data]);
       } catch (error) {
         console.log(error);
       }
@@ -80,9 +71,20 @@ function App() {
       {/* <h1>Helllo</h1> */}
       <Navbar />
       <HeroImage />
-      <Section title={'Top Albums'} playListData={topAlbums}/>
-      <Section title={'New Albums'} playListData={newAlbums}/>
-      <FilteredSection genres={genres} playListData={filteredPlaylist} currentTabFilter={setTabsFilter}/>
+      <Section title={'Top Albums'} playListData={topAlbums} navId='ta'/>
+      <Section title={'New Albums'} playListData={newAlbums} navId='na'/>
+      <FilteredSection 
+        title={'Songs'} //FilterdSection Name.
+        genres={genres} //Different Generes name.
+        excuteFilter={(genre) => {
+          if(genre === 'all'){
+            setFilteredPlaylist(songsPlaylist)
+          } else{
+            setFilteredPlaylist(songsPlaylist.filter(song => song.genre.key === genre))
+          }
+        }}
+        playListData={filteredPlaylist}
+      />
       <AccordionFAQ />
     </div>
   )

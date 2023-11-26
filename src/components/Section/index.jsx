@@ -3,7 +3,7 @@ import Card from '../Card'
 import Carousel from '../Carousel'
 import { useState } from 'react'
 
-function index({title, playListData}) {
+function index({title, playListData, navId}) {
   const [isCollapsed, setIsCollapsed] = useState(false)
   return (
     <div className='section'>
@@ -25,7 +25,7 @@ function index({title, playListData}) {
             />
           )
         })}
-      </div> : <Carousel playListData={playListData} />}  
+      </div> : <Carousel playListData={playListData} navId={navId}/>}  
     </div>
   )
 }
