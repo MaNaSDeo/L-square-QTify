@@ -10,6 +10,11 @@ import Card from '../Card'
 import './Carousel.css'
 
 function index({playListData, navId}) {
+  // console.log(playListData)
+  // console.log(`Songs name - ${playListData[1].songs.length}`)
+  playListData.map(element => {
+    if(element.songs){console.log(element.songs.length)}
+  })
 
   return (
     <div className='carousel-container'>
@@ -25,6 +30,9 @@ function index({playListData, navId}) {
                 imgSrc={element.image} 
                 followers={element.follows? element.follows : element.likes} 
                 title={element.title} 
+                songsCount={element.songs ? element.songs.length : undefined}
+                // if(element.songs)
+                // songsCount={'52'}
               />
             </SwiperSlide>
           )

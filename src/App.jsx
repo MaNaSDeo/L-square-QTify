@@ -16,8 +16,7 @@ function App() {
   const [genres, setGenres] = useState([]);
   const [songsPlaylist, setSongsPlaylist] = useState([]);
   const [filteredPlaylist, setFilteredPlaylist] = useState([]);
-  const [tabsFilter, setTabsFilter] = useState('all');
-  // console.log(genres);
+  console.log(topAlbums);
 
   useEffect(() => {
     const playListData = async() =>{
@@ -27,7 +26,6 @@ function App() {
         
         if(responseTop.status===200){
           setTopAlbums(responseTop.data)
-          setFilteredPlaylist(responseTop.data) //Temprory
         }
       } catch (error) {
         console.log(error)
@@ -59,6 +57,7 @@ function App() {
 
         if(resoponseSongs.status === 200)
           setSongsPlaylist(resoponseSongs.data)
+          setFilteredPlaylist(resoponseSongs.data) //Temprory
       } catch (error) {
         console.log(error)
       }
