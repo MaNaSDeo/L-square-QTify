@@ -3,7 +3,9 @@ import Tooltip from '@mui/material/Tooltip';
 
 function index({imgSrc, followers, title, songsCount}) {
   return (
-    <Tooltip title={`${songsCount} songs`} placement="top">
+    <Tooltip 
+      title={songsCount ? `${songsCount} songs` : null} 
+      placement="top">
       <div className="card">
         <div className="card-main">
           <div className="card-main-top">
